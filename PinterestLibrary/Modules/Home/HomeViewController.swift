@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
-    var controller = Controller()
+    var controller = HomeController()
     
     var layoutView: HomeView { return view as! HomeView }
     
@@ -58,6 +58,7 @@ class ViewController: UIViewController {
         
         controller.errorLoading.delegate(on: self) { (self, error) in
             self.stopLoadingAnimation()
+            self.showAlert(alertMessage: error.message)
         }
         
     }
@@ -75,7 +76,7 @@ class ViewController: UIViewController {
 }
 
 //MARK: -> UICollectionViewDataSource
-extension ViewController: UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDataSource {
     internal func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
         return controller.data.count
@@ -94,7 +95,7 @@ extension ViewController: UICollectionViewDataSource {
 }
 
 //MARK: -> PinterestLayoutDelegate
-extension ViewController: PinterestLayoutDelegate {
+extension HomeViewController: PinterestLayoutDelegate {
     internal func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
         print("Index: ", indexPath.item)
         if indexPath.item == 9 {
@@ -107,7 +108,7 @@ extension ViewController: PinterestLayoutDelegate {
 }
 
 //MARK: -> UICollectionViewDelegate
-extension ViewController: UICollectionViewDelegate {
+extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.item == controller.data.count - 1 {
             self.controller.loadMoreData()

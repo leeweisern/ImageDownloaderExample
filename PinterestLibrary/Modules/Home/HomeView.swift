@@ -8,7 +8,7 @@
 
 import UIKit
 
-class View: UIView {
+class HomeView: UIView {
     
     public let collectionViewSideInsets: CGFloat = 4
     public let collectionViewColumns = 2
@@ -34,6 +34,7 @@ class View: UIView {
             let layout = PinterestLayout(cellPadding: collectionViewCellPadding,
                                          numberOfColumns: collectionViewColumns)
             collectionView.setCollectionViewLayout(layout, animated: false)
+            collectionView.isPrefetchingEnabled = false
             collectionView.register(ImageCell.nib(),
                                     forCellWithReuseIdentifier: ImageCell.cellReuseIdentifier())
         }
@@ -52,4 +53,6 @@ class View: UIView {
     func customInit() {
         self.fromNib()
     }
+    
+    
 }

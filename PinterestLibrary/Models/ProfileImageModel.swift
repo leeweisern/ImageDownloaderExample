@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+struct ProfileImageModel: Codable {
+    
+    let small: String
+    let medium: String
+    let large: String
+}

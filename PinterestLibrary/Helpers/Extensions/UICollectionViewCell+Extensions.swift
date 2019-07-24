@@ -6,4 +6,14 @@
 //  Copyright © 2019 MindValley. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+extension UICollectionViewCell {
+    static func nib() -> UINib {
+        return UINib(nibName: String(describing: self), bundle: Bundle(for: self))
+    }
+    
+    static func cellReuseIdentifier() -> String {
+        return String(describing: self)
+    }
+}
