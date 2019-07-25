@@ -11,6 +11,7 @@ import MVImageDownloader
 
 class ImageCell: UICollectionViewCell {
     
+    
     @IBOutlet private var imageView: UIImageView! {
         didSet {
             imageView.layer.cornerRadius = 5

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		267E9BB36D1CF308A46CCAAB /* Pods_PinterestLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50E8403ABC56BE5A6FEF613 /* Pods_PinterestLibrary.framework */; };
 		830BF52C22E8952C005200B7 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830BF52B22E8952C005200B7 /* UIViewController+Extensions.swift */; };
+		831A5E1E22E9AC4300A14ADB /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A5E1D22E9AC4300A14ADB /* PopAnimator.swift */; };
+		831A5E2122E9B3C900A14ADB /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A5E1F22E9B3C900A14ADB /* DetailView.swift */; };
+		831A5E2222E9B3C900A14ADB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A5E2022E9B3C900A14ADB /* DetailViewController.swift */; };
 		835D91E922E36541000B6FDD /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835D91E822E36541000B6FDD /* NetworkService.swift */; };
 		835D91F222E4AEAD000B6FDD /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835D91F122E4AEAD000B6FDD /* PinterestLayout.swift */; };
 		835D91F422E4AFA3000B6FDD /* PinterestLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835D91F322E4AFA3000B6FDD /* PinterestLayoutDelegate.swift */; };
@@ -51,6 +54,9 @@
 		5BD4671D13B01C442D4418D0 /* Pods-PinterestLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinterestLibrary.release.xcconfig"; path = "Target Support Files/Pods-PinterestLibrary/Pods-PinterestLibrary.release.xcconfig"; sourceTree = "<group>"; };
 		6F41B6EFFEF004ED423F8C2E /* Pods-PinterestLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinterestLibrary.debug.xcconfig"; path = "Target Support Files/Pods-PinterestLibrary/Pods-PinterestLibrary.debug.xcconfig"; sourceTree = "<group>"; };
 		830BF52B22E8952C005200B7 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+Extensions.swift"; path = "../../../../../../../System/Volumes/Data/Users/kelvinleeweisern/Desktop/PinterestLibrary/PinterestLibrary/Helpers/Extensions/UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		831A5E1D22E9AC4300A14ADB /* PopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PopAnimator.swift; path = ../../../../../../../System/Volumes/Data/Users/kelvinleeweisern/Desktop/PinterestLibrary/PinterestLibrary/Helpers/Transition/PopAnimator.swift; sourceTree = "<group>"; };
+		831A5E1F22E9B3C900A14ADB /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		831A5E2022E9B3C900A14ADB /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		835D91E822E36541000B6FDD /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		835D91F122E4AEAD000B6FDD /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		835D91F322E4AFA3000B6FDD /* PinterestLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayoutDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +139,23 @@
 			path = Uitility;
 			sourceTree = "<group>";
 		};
+		8383906B22E9A74600423EC7 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				831A5E1F22E9B3C900A14ADB /* DetailView.swift */,
+				831A5E2022E9B3C900A14ADB /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		8383907222E9ABF500423EC7 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				831A5E1D22E9AC4300A14ADB /* PopAnimator.swift */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
 		83C0F92722E2EE4400D2E154 = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +193,7 @@
 		83C0F94B22E2EECC00D2E154 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				8383906B22E9A74600423EC7 /* Detail */,
 				83C0F94C22E2EED500D2E154 /* Home */,
 			);
 			path = Modules;
@@ -203,6 +227,7 @@
 		83C0F94E22E2EEF700D2E154 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				8383907222E9ABF500423EC7 /* Transition */,
 				837C430522E94C59009CD56C /* Uitility */,
 				835D91F022E4AE9E000B6FDD /* PinterestLayout */,
 				83C0F95022E2F0F700D2E154 /* Extensions */,
@@ -366,8 +391,11 @@
 				83C0F95922E2F61800D2E154 /* ImageCell.swift in Sources */,
 				83C0F93422E2EE4400D2E154 /* AppDelegate.swift in Sources */,
 				83C0F96A22E2FFF800D2E154 /* CategoryModel.swift in Sources */,
+				831A5E2122E9B3C900A14ADB /* DetailView.swift in Sources */,
+				831A5E2222E9B3C900A14ADB /* DetailViewController.swift in Sources */,
 				835D91E922E36541000B6FDD /* NetworkService.swift in Sources */,
 				83C0F96C22E303E000D2E154 /* UrlModel.swift in Sources */,
+				831A5E1E22E9AC4300A14ADB /* PopAnimator.swift in Sources */,
 				837C430322E94C56009CD56C /* Strongify.swift in Sources */,
 				83C0F96422E2FF2B00D2E154 /* UserModel.swift in Sources */,
 				830BF52C22E8952C005200B7 /* UIViewController+Extensions.swift in Sources */,

@@ -14,6 +14,8 @@ class HomeViewController: UIViewController {
     
     var layoutView: HomeView { return view as! HomeView }
     
+    private let transition = PopAnimator()
+
     override func loadView() {
         view = HomeView()
     }
@@ -60,7 +62,6 @@ class HomeViewController: UIViewController {
             self.stopLoadingAnimation()
             self.showAlert(alertMessage: error.message)
         }
-        
     }
     
     private func stopLoadingAnimation() {
@@ -83,9 +84,6 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.item == 9 {
-            
-        }
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCell.cellReuseIdentifier(), for: indexPath) as? ImageCell else { fatalError() }
         
         cell.updateCell(with: controller.data[indexPath.item])
@@ -97,10 +95,6 @@ extension HomeViewController: UICollectionViewDataSource {
 //MARK: -> PinterestLayoutDelegate
 extension HomeViewController: PinterestLayoutDelegate {
     internal func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
-        print("Index: ", indexPath.item)
-        if indexPath.item == 9 {
-            
-        }
         let model = controller.data[indexPath.item]
         let cellHeight = Double(layoutView.collectionViewCellWidth) / model.width * model.height
         return CGFloat(cellHeight)
@@ -109,11 +103,56 @@ extension HomeViewController: PinterestLayoutDelegate {
 
 //MARK: -> UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    internal func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.item == controller.data.count - 1 {
             self.controller.loadMoreData()
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let model = controller.data[indexPath.item]
+        let vc = DetailViewController(imageURL: URL(string: model.urls.regular)!)
+        let navVC = UINavigationController(rootViewController: vc)
+        navVC.transitioningDelegate = self
+        navVC.modalPresentationStyle = .overCurrentContext
+        
+        vc.didDismissView.delegate(on: self) { (self, _) in
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        present(navVC, animated: true)
+    }
 }
 
+//MARK: -> UIViewControllerTransitioningDelegate
+extension HomeViewController: UIViewControllerTransitioningDelegate {
+    func animationController(
+        forPresented presented: UIViewController,
+        presenting: UIViewController, source: UIViewController)
+        -> UIViewControllerAnimatedTransitioning? {
+            guard let selectedIndexPathCell = layoutView.collectionView.indexPathsForSelectedItems?.first,
+                let selectedCell = layoutView.collectionView.cellForItem(at: selectedIndexPathCell)
+                    as? ImageCell,
+                let selectedCellSuperview = selectedCell.superview
+                else {
+                    return nil
+            }
+            
+            transition.originFrame = selectedCellSuperview.convert(selectedCell.frame, to: nil)
+            transition.originFrame = CGRect(
+                x: transition.originFrame.origin.x,
+                y: transition.originFrame.origin.y,
+                width: transition.originFrame.size.width,
+                height: transition.originFrame.size.height
+            )
+            
+            transition.presenting = true
+            return transition
+    }
 
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.presenting = false
+
+        return transition
+    }
+}
