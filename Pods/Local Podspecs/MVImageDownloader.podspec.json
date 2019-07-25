@@ -1,0 +1,19 @@
+{
+  "name": "MVImageDownloader",
+  "version": "1.0.0",
+  "summary": "A simple Image Downloader that has memory caching capability.",
+  "description": "The image downloader is a customizable image request handler. It handles asynchronous images and avoids duplicate download of the same url.",
+  "homepage": "https://www.mindvalley.com",
+  "license": "MIT",
+  "authors": {
+    "kelvin lee wei sern": "leeweisern@gmail.com"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source": {
+    "git": "https://github.com/leeweisern/MVImageDownloader.git",
+    "tag": "1.0.0"
+  },
+  "source_files": "MVImageDownloader/**/*.swift"
+}

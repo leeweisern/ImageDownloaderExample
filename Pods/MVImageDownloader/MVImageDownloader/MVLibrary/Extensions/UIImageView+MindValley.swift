@@ -9,14 +9,14 @@
 import UIKit
 import ObjectiveC.runtime
 
-protocol DownloadableImageView: class {
+public protocol DownloadableImageView: class {
     var url: String { get set }
 }
 
 var IdentifiableIdKey   = "kIdentifiableIdKey"
 
 extension UIImageView: DownloadableImageView {
-    var url: String {
+    public var url: String {
         get {
             return (objc_getAssociatedObject(self, &IdentifiableIdKey) as? String) ?? "default"
         }
@@ -26,7 +26,7 @@ extension UIImageView: DownloadableImageView {
     }
 }
 
-extension DownloadableImageView where Self: UIImageView {
+public extension DownloadableImageView where Self: UIImageView {
     
     func setImage(withUrl url: Resource) {
         self.url = url.downloadURL.absoluteString

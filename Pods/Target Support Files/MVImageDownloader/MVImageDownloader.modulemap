@@ -1,0 +1,6 @@
+framework module MVImageDownloader {
+  umbrella header "MVImageDownloader-umbrella.h"
+
+  export *
+  module * { export * }
+}

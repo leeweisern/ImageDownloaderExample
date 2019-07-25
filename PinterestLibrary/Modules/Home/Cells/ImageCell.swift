@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MVImageDownloader
 
 class ImageCell: UICollectionViewCell {
     
@@ -24,16 +25,6 @@ class ImageCell: UICollectionViewCell {
         
         imageView.image = nil
         imageView.setImage(withUrl: url)
-//        MindValley.retrieveImage(with: url, completionHandler: strongify(weak: self) { (self, result) in
-//            switch result {
-//            case .success(let image):
-//                self.imageView.image = image
-//
-//            case .failure(let error):
-//                print("Download Image Error:", error)
-//                self.imageView.image = nil
-//            }
-//        })
     }
 }
 

@@ -30,6 +30,11 @@ public class MindValleyManager {
         self.init(cache: .default, downloader: .default)
     }
     
+    /// Download image from a particular url, that handles caching as well.
+    ///
+    /// - Parameters:
+    ///   - resource: The url for requesting the image
+    ///   - completionHandler: Callback when finish getting an image or error
     public func retrieveImage(
         with resource: Resource,
         completionHandler: @escaping ((Result<UIImage, Error>) -> Void)) {
@@ -51,7 +56,24 @@ public class MindValleyManager {
         })
     }
     
+    /// Cancel a download task if it is running. It will do nothing if this task is not running.
+    ///
+    /// - Note:
+    /// There is an optimization to prevent starting another download task if the target URL is being
+    /// downloading. However,cancelling a `DownloadTask`
+    /// does not affect other `DownloadTask`s.
+    ///
+    /// - Parameters:
+    ///   - url: The requested url task that is downloading
     public func cancelDownload(withUrl url: URL) {
         downloader.cancel(url: url)
+    }
+    
+    /// Limits the maximum total cost that the cache can hold before it starts evicting objects.
+    ///
+    /// - Parameters:
+    ///   - size: The maximum total cost that the cache can hold in bytes
+    public func maximumMemoryStorage(ofSize size: Int) {
+        cache.setStorageLimit(withMemory: size)
     }
 }

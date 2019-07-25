@@ -27,6 +27,10 @@ open class ImageCache {
 
     }
     
+    public func setStorageLimit(withMemory memory: Int) {
+        memoryStorage.config.totalCostLimit = memory
+    }
+    
     @objc public func clearMemoryCache() {
         try? memoryStorage.removeAll()
     }
