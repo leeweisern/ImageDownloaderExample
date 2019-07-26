@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		267E9BB36D1CF308A46CCAAB /* Pods_PinterestLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F50E8403ABC56BE5A6FEF613 /* Pods_PinterestLibrary.framework */; };
-		830BF52C22E8952C005200B7 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830BF52B22E8952C005200B7 /* UIViewController+Extensions.swift */; };
-		831A5E1E22E9AC4300A14ADB /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A5E1D22E9AC4300A14ADB /* PopAnimator.swift */; };
 		831A5E2122E9B3C900A14ADB /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A5E1F22E9B3C900A14ADB /* DetailView.swift */; };
 		831A5E2222E9B3C900A14ADB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A5E2022E9B3C900A14ADB /* DetailViewController.swift */; };
 		835D91E922E36541000B6FDD /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835D91E822E36541000B6FDD /* NetworkService.swift */; };
@@ -35,6 +33,8 @@
 		83C0F96822E2FF7700D2E154 /* LinksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C0F96722E2FF7700D2E154 /* LinksModel.swift */; };
 		83C0F96A22E2FFF800D2E154 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C0F96922E2FFF800D2E154 /* CategoryModel.swift */; };
 		83C0F96C22E303E000D2E154 /* UrlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C0F96B22E303E000D2E154 /* UrlModel.swift */; };
+		83D0542A22EAEE360034BD4B /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D0542922EAEE360034BD4B /* PopAnimator.swift */; };
+		83D0542C22EAEE410034BD4B /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D0542B22EAEE410034BD4B /* UIViewController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,8 +53,6 @@
 /* Begin PBXFileReference section */
 		5BD4671D13B01C442D4418D0 /* Pods-PinterestLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinterestLibrary.release.xcconfig"; path = "Target Support Files/Pods-PinterestLibrary/Pods-PinterestLibrary.release.xcconfig"; sourceTree = "<group>"; };
 		6F41B6EFFEF004ED423F8C2E /* Pods-PinterestLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PinterestLibrary.debug.xcconfig"; path = "Target Support Files/Pods-PinterestLibrary/Pods-PinterestLibrary.debug.xcconfig"; sourceTree = "<group>"; };
-		830BF52B22E8952C005200B7 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+Extensions.swift"; path = "../../../../../../../System/Volumes/Data/Users/kelvinleeweisern/Desktop/PinterestLibrary/PinterestLibrary/Helpers/Extensions/UIViewController+Extensions.swift"; sourceTree = "<group>"; };
-		831A5E1D22E9AC4300A14ADB /* PopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PopAnimator.swift; path = ../../../../../../../System/Volumes/Data/Users/kelvinleeweisern/Desktop/PinterestLibrary/PinterestLibrary/Helpers/Transition/PopAnimator.swift; sourceTree = "<group>"; };
 		831A5E1F22E9B3C900A14ADB /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		831A5E2022E9B3C900A14ADB /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		835D91E822E36541000B6FDD /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -82,6 +80,8 @@
 		83C0F96722E2FF7700D2E154 /* LinksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksModel.swift; sourceTree = "<group>"; };
 		83C0F96922E2FFF800D2E154 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		83C0F96B22E303E000D2E154 /* UrlModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlModel.swift; sourceTree = "<group>"; };
+		83D0542922EAEE360034BD4B /* PopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
+		83D0542B22EAEE410034BD4B /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		F50E8403ABC56BE5A6FEF613 /* Pods_PinterestLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PinterestLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -151,7 +151,7 @@
 		8383907222E9ABF500423EC7 /* Transition */ = {
 			isa = PBXGroup;
 			children = (
-				831A5E1D22E9AC4300A14ADB /* PopAnimator.swift */,
+				83D0542922EAEE360034BD4B /* PopAnimator.swift */,
 			);
 			path = Transition;
 			sourceTree = "<group>";
@@ -247,9 +247,9 @@
 		83C0F95022E2F0F700D2E154 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				83D0542B22EAEE410034BD4B /* UIViewController+Extensions.swift */,
 				83C0F95122E2F10300D2E154 /* UIView+Extensions.swift */,
 				83C0F95A22E2F6F200D2E154 /* UICollectionViewCell+Extensions.swift */,
-				830BF52B22E8952C005200B7 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -387,7 +387,9 @@
 				83C0F94622E2EEA700D2E154 /* HomeController.swift in Sources */,
 				83C0F96222E2FE8000D2E154 /* DataModel.swift in Sources */,
 				83C0F95222E2F10300D2E154 /* UIView+Extensions.swift in Sources */,
+				83D0542C22EAEE410034BD4B /* UIViewController+Extensions.swift in Sources */,
 				83C0F93622E2EE4400D2E154 /* HomeViewController.swift in Sources */,
+				83D0542A22EAEE360034BD4B /* PopAnimator.swift in Sources */,
 				83C0F95922E2F61800D2E154 /* ImageCell.swift in Sources */,
 				83C0F93422E2EE4400D2E154 /* AppDelegate.swift in Sources */,
 				83C0F96A22E2FFF800D2E154 /* CategoryModel.swift in Sources */,
@@ -395,10 +397,8 @@
 				831A5E2222E9B3C900A14ADB /* DetailViewController.swift in Sources */,
 				835D91E922E36541000B6FDD /* NetworkService.swift in Sources */,
 				83C0F96C22E303E000D2E154 /* UrlModel.swift in Sources */,
-				831A5E1E22E9AC4300A14ADB /* PopAnimator.swift in Sources */,
 				837C430322E94C56009CD56C /* Strongify.swift in Sources */,
 				83C0F96422E2FF2B00D2E154 /* UserModel.swift in Sources */,
-				830BF52C22E8952C005200B7 /* UIViewController+Extensions.swift in Sources */,
 				837C430422E94C56009CD56C /* Delegate.swift in Sources */,
 				835D91F222E4AEAD000B6FDD /* PinterestLayout.swift in Sources */,
 				83C0F96622E2FF6500D2E154 /* ProfileImageModel.swift in Sources */,

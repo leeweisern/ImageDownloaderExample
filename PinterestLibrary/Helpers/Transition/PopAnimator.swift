@@ -37,7 +37,7 @@ public class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         let yScaleFactor = initialFrame.height / finalFrame.height
         
         let scaleTransform = CGAffineTransform(scaleX: xScaleFactor, y: yScaleFactor)
-
+        
         if presenting {
             view.transform = scaleTransform
             view.center = CGPoint(
@@ -48,7 +48,7 @@ public class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         
         view.layer.cornerRadius = 20
         view.layer.masksToBounds = true
-
+        
         containerView.addSubview(view)
         containerView.bringSubviewToFront(view)
         
@@ -64,7 +64,7 @@ public class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         }, completion: { _ in
             transitionContext.completeTransition(true)
         })
-
+        
     }
     
     private func dismissVC(using transitionContext: UIViewControllerContextTransitioning) {
